@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filtro JavaScript</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button class="filtro-button" onclick="abrirFiltro()">Abrir Filtro</button>
+
+    <div id="modalFiltro" class="modal">
+      <div class="modal-content">
+        <span class="fechar" onclick="fecharFiltro()">&times;</span>
+        <select id="filtro" onchange="mostrarInput()">
+          <option value="">Selecione...</option>
+          <option value="contem">Contém</option>
+          <option value="naoContem">Não contém</option>
+          <option value="igual">Igual</option>
+          <option value="diferente">Diferente</option>
+          <option value="comecaCom">Começa com</option>
+          <option value="terminaCom">Termina com</option>
+          <option value="vazio">Vazio</option>
+          <option value="naoVazio">Não vazio</option>
+        </select>
+        <div id="inputValor" style="display: none;">
+          <input type="text" id="valor" oninput="mostrarRadio()">
+        </div>
+        <div id="filtrosSelecionados"></div>
+      
+        <div class="radio-buttons" id="radioButtons" style="display: none;">
+          <label for="option1">E</label>
+          <input type="radio" id="option1" name="option" value="option1">
+          <label for="option2">OU</label>
+          <input type="radio" id="option2" name="option" value="option2">
+        </div>
+
+        <button onclick="filtrar()">Filtrar</button>
+      </div>
+    </div>
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>tipo</th>
+          <th>cor</th>
+          <th>ano</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>sedan</td><td>cinza</td><td>2016</td></tr>
+        <tr><td>hatch</td><td>prata</td><td>2018</td></tr>
+        <tr><td>suv</td><td>cinza</td><td>2020</td></tr>
+        <tr><td>picape</td><td>preto</td><td>2016</td></tr>
+        <tr><td>moto</td><td>branco</td><td>2020</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
